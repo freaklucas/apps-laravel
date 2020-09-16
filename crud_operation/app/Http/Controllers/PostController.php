@@ -38,7 +38,7 @@ class PostController extends Controller {
     public function deletePost($id) {
         Post::where('id', $id)->delete();
 
-        return back()->with('post_deleted', 'CARECA removido com sucesso!');
+        return back()->with('post_deleted', 'Post removido com sucesso!');
     }
 
     public function editPost($id) {
