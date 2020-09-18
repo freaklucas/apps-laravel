@@ -9,18 +9,30 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     
+    {{--  <link href="{{resources('css/app.css')}}" rel="stylesheet">  --}}
+    <link rel="stylesheet" type="text/css" href="../css/app.css" />
+
+
 </head>
 <body>
-    
     <section style = "padding-top:60px;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 ">
+
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                          <li class="page-item"><a class="page-link" href="/">Timeline</a></li>
+                          <li class="page-item"><a class="page-link" href="/add-post">Nova nota</a></li>
+                          <li class="page-item">
+                          </li>
+                        </ul>
+                      </nav>
                     <div class="card">
                         <div class="card-header">
-                            <h2><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bookmark-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <h3><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bookmark-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5V2z"/>
-                              </svg>    Todas as notas <a href="/add-post" class="btn btn-outline-info"> + Novo</a> </h2>
+                              </svg>    Timeline </h3>
                         </div>
                         <div class="card-body">
                             @if(Session::has('post_deleted'))
@@ -44,11 +56,11 @@
                                             <td>{{$post->title}}</td>
                                             <td>{{$post->body}}</td>
                                             <td>
-                                                <a href="/posts/{{$post->id}}" class="btn btn-outline-success">Detalhar</a>
+                                                <a href="/posts/{{$post->id}}" class="btn btn-custom btn-outline-info">Detalhar</a>
 
-                                                <a href="/edit-post/{{$post->id}}" class="btn btn-outline-warning">Editar</a>
+                                                <a href="/edit-post/{{$post->id}}" class="btn btn-custom btn-outline-warning m-1">Editar</a>
 
-                                                <a href="/delete-post/{{$post->id}}" class="btn btn-outline-danger">Remover</a>
+                                                <a href="/delete-post/{{$post->id}}" class="btn btn-custom btn-outline-danger m-1">Remover</a>
                                             </td>
                                         </tr>
                                     @endforeach

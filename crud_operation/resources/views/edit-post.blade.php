@@ -8,7 +8,8 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" type="text/css" href="../css/app.css" />
+
 </head>
 <body>
     
@@ -16,6 +17,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-3">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                          <li class="page-item"><a class="page-link" href="/">Timeline</a></li>
+                          <li class="page-item"><a class="page-link" href="/add-post">Nova nota</a></li>
+                          <li class="page-item">
+                          </li>
+                        </ul>
+                      </nav>
+
                     <div class="card">
                         <div class="card-header">
                             <h4> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -40,7 +50,7 @@
                                     <label for="body">Descrição da postagem</label>
                                     <textarea name="body" class="form-control" rows="3">{{$post->body}}</textarea>
                                 </div>
-                                <button type="submit" class="btn btn-outline-info">Atualize um post</button>
+                                <button type="submit" class="btn btn-custom btn-outline-info">Atualize post</button>
                             </form>
                         </div>
                 </div>

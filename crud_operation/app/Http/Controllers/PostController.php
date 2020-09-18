@@ -23,8 +23,8 @@ class PostController extends Controller {
     }
 
     public function getPost() {
-
-        $posts = Post::orderBy('id', 'DESC')->get();
+        
+        $posts = Post::orderBy('id', 'ASC')->get();
 
         return view('posts', compact('posts'));
     }
@@ -49,6 +49,7 @@ class PostController extends Controller {
     }
 
     public function updatePost(Request $request) {
+        
         $post = Post::find($request->id);
         $post->title = $request->title;
         $post->body = $request->body;
@@ -56,7 +57,6 @@ class PostController extends Controller {
         $post->save();
 
         return back()->with('post_updated', 'Post atualizado com sucesso!');
-
     }
 }
 
