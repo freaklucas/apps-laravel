@@ -66,11 +66,11 @@ class ControladorCategoria extends Controller
      */
     public function edit($id) {
 
-        $categoria = Categoria::find($id);
-        if(isset($categoria)) {
-            $categoria->edit();
-
-            return view('editarcategoria', compact('categoria'));
+        $cat = Categoria::find($id);
+        
+        if(isset($cat)) {
+            
+            return view('editarcategoria', compact('cat'));
         }
         return redirect('/categorias');
     }
@@ -82,9 +82,14 @@ class ControladorCategoria extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request, $id) {
+
+        $categoria = Categoria::find($id);
+        if(isset($categoria)) {
+            $categoria->nome = $request->input('nomeCategoria');
+            $categoria->save();
+        }
+        return redirect('/categorias');
     }
 
     /** 

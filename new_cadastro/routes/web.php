@@ -31,3 +31,5 @@ Route::get('/categorias/apagar/{id}', [ControladorCategoria::class,'destroy']);
 
 Route::get('/categorias/editar/{id}', [ControladorCategoria::class,'edit']);
 
+Route::post('/categorias/{id}', [ControladorCategoria::class,'update']);
+
