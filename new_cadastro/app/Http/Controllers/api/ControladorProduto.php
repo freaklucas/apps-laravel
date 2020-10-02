@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\api;
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
 use App\Models\Produto;
+
 
 
 class ControladorProduto extends Controller
@@ -16,22 +17,20 @@ class ControladorProduto extends Controller
      */
 
     public function index() {
-        // /api/produtos
+        //api/produtos
         $prods = Produto::all();
         
         return json_encode($prods);
-
-        // return $prods->toJson();
     }
     
-    public function indexView() {
-        // /produtos
-        return view('produtos');
-    }
+    // public function indexView() {
+    //     // /produtos
+    //     return view('produtos');
+    // }
 
     //public function index() {
         // index vazia para teste unitário
-    //}
+    //} 
 
     /**
      * Show the form for creating a new resource.

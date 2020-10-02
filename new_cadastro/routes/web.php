@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControladorCategoria;
 use App\Http\Controllers\ControladorProduto;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,7 +20,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/produtos', [ControladorProduto::class,'index']);
+Route::get('/produtos', [ControladorProduto::class,'indexView']);
 
 Route::get('/categorias', [ControladorCategoria::class,'index']);
 
@@ -32,4 +33,3 @@ Route::get('/categorias/apagar/{id}', [ControladorCategoria::class,'destroy']);
 Route::get('/categorias/editar/{id}', [ControladorCategoria::class,'edit']);
 
 Route::post('/categorias/{id}', [ControladorCategoria::class,'update']);
-

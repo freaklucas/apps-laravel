@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Categoria;
 
-class ControladorCategoria extends Controller
-{
+class ControladorCategoria extends Controller {
+    
     /**
      * Display a listing of the resource.
      *
@@ -105,5 +105,11 @@ class ControladorCategoria extends Controller
             $categoria->delete();
         }
         return redirect('/categorias');
+    }
+
+    public function indexJson() {
+        
+        $cats = Categoria::all();
+        return json_encode($cats);
     }
 }
