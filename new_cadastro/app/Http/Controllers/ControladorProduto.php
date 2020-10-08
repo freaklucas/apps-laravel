@@ -51,7 +51,16 @@ class ControladorProduto extends Controller
      */
     public function store(Request $request) {
 
-  
+        $produto = new Produto();
+
+        $produto->nome = $request->input('nome');
+        $produto->preco = $request->input('preco');
+        $produto->estoque = $request->input('estoque');
+        $produto->categoria_id = $request->input('categoria_id');
+        
+        $produto->save();
+        
+        return json_encode($produto);
     }
 
     /**
@@ -99,3 +108,10 @@ class ControladorProduto extends Controller
         //
     }
 }
+
+
+// prod = { nome: "Caneca", preco: 25, estoque: 22, categoria_id: 4}
+
+// $.post('/api/produtos', prod, function() {
+//     console.log(data);
+// })
