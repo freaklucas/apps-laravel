@@ -42,11 +42,12 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
+            'driver' => 'passport',
             'provider' => 'users',
-            'hash' => false,
+            'hash' => true,
         ],
     ],
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -99,6 +100,14 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+    ],
+
+    'headers' => [
+
+        'Accept' => 'application/json',
+    
+        'Authorization' => 'Bearer '.$accessToken,
+    
     ],
 
     /*
